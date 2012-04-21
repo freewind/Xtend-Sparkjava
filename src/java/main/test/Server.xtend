@@ -1,13 +1,17 @@
 package test
 
-import static spark.Spark.*;
-import spark.*;
+import spark.Request
+import spark.Response
+import spark.Route
+
+import static spark.Spark.*
+import static test.Server.*
 
 class Server {
 
 	def static void main(String[] args) {
 		get(route("/hello") [ res, res |
-			Views.test("Xtend and sparkjava")
+			Views::test("Xtend and sparkjava")
 		])
 	}
 
